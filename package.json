@@ -1,0 +1,23 @@
+{
+  "name": "authentication-service",
+  "scripts": {
+    "build": "pnpm run build:debug && pnpm run build:production",
+    "build:debug": "node node_modules/webpack-cli/bin/cli.js --mode development --config ./webpack.config.js",
+    "build:production": "node node_modules/webpack-cli/bin/cli.js --mode production --config ./webpack.config.js"
+  },
+  "sideEffects": [
+    "AuthenticationService2.*"
+  ],
+  "dependencies": {
+    "oidc-client-ts": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.20.1",
+    "terser": "^5.39.0",
+    "terser-webpack-plugin": "^5.3.11",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
